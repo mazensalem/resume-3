@@ -1,6 +1,7 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useEffect, useRef } from "react";
+import CustomArraw from "./CustomArraw";
 
 gsap.registerPlugin(ScrollTrigger);
 export default function Portfolio() {
@@ -44,7 +45,9 @@ export default function Portfolio() {
               <a
                 href="github.com"
                 className="block w-10 h-10 bg-white rounded-full"
-              ></a>
+              >
+                <img src="./svgs/github.svg" alt="github" />
+              </a>
               <div className="absolute bg-blue-400 px-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-900 top-2/4 -left-1 transform -translate-y-2/4 -translate-x-full">
                 Code
               </div>
@@ -68,7 +71,9 @@ export default function Portfolio() {
               <a
                 href="github.com"
                 className="block w-10 h-10 bg-white rounded-full"
-              ></a>
+              >
+                <img src="./svgs/github.svg" alt="github" />
+              </a>
               <div className="absolute bg-blue-400 px-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-900 top-2/4 -left-1 transform -translate-y-2/4 -translate-x-full">
                 Code
               </div>
@@ -92,14 +97,16 @@ export default function Portfolio() {
               <a
                 href="github.com"
                 className="block w-10 h-10 bg-white rounded-full"
-              ></a>
+              >
+                <img src="./svgs/github.svg" alt="github" />
+              </a>
               <div className="absolute bg-blue-400 px-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-900 top-2/4 -left-1 transform -translate-y-2/4 -translate-x-full">
                 Code
               </div>
             </div>
           </div>
           <img className="rounded-md" src="/img/project.jpg" alt="project" />
-        </div>
+        </div>{" "}
         <div className="w-max relative mb-2">
           <div className="p-1 absolute bottom-0 w-full rounded-md text-white bg-black flex justify-between px-2">
             <div className="group relative">
@@ -116,14 +123,16 @@ export default function Portfolio() {
               <a
                 href="github.com"
                 className="block w-10 h-10 bg-white rounded-full"
-              ></a>
+              >
+                <img src="./svgs/github.svg" alt="github" />
+              </a>
               <div className="absolute bg-blue-400 px-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-900 top-2/4 -left-1 transform -translate-y-2/4 -translate-x-full">
                 Code
               </div>
             </div>
           </div>
           <img className="rounded-md" src="/img/project.jpg" alt="project" />
-        </div>
+        </div>{" "}
       </div>
     </div>
   );

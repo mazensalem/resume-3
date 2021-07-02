@@ -40,10 +40,9 @@ export default function About() {
         <br />
         <a
           className="mt-3 inline-block bg-black text-white hover:text-blue-500 px-2 rounded-md text-xl"
-          href="./pdf/Mazen - Resume.pdf"
-          download
+          href="#contactsection"
         >
-          Download CV pdf
+          Let's Talk
         </a>
       </p>
     </div>
