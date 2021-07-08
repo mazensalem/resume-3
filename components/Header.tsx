@@ -37,17 +37,20 @@ export default function Header() {
         <div className="relative text-4xl sm:text-6xl md:text-8xl">
           <div
             ref={nameref}
-            className="w-screen text-center transform translate-y-full"
+            className="text-primary dark:text-primarydark w-screen text-center transform translate-y-full"
           >
             MAZEN SALEM
           </div>
-          <div className="absolute w-full h-full bg-white"></div>
+          <div className="absolute w-full h-full bg-white dark:bg-black"></div>
         </div>
         <div className="relative mt-6 text-lg md:text-xl">
-          <div ref={titleref} className="transform translate-y-full">
+          <div
+            ref={titleref}
+            className="text-black dark:text-tertiary transform translate-y-full"
+          >
             Front End Developer
           </div>
-          <div className="absolute w-full h-full bg-white"></div>
+          <div className="absolute w-full h-full bg-white dark:bg-black"></div>
         </div>
       </div>
     </>

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
@@ -17,106 +17,164 @@ export default function Contact() {
       },
     });
   });
+  const [emailtext, settextemail] = useState("copy");
+  const [phonetext, settextphone] = useState("copy");
+  const [githubtext, settextgithub] = useState("copy");
+  const [facebooktext, settextfacebook] = useState("copy");
+
+  useEffect(() => {
+    if (emailtext === "copyed") {
+      setTimeout(() => {
+        settextemail("copy");
+      }, 1000);
+    }
+  }, [emailtext]);
+
+  useEffect(() => {
+    if (phonetext === "copyed") {
+      setTimeout(() => {
+        settextphone("copy");
+      }, 1000);
+    }
+  }, [phonetext]);
+
+  useEffect(() => {
+    if (githubtext === "copyed") {
+      setTimeout(() => {
+        settextgithub("copy");
+      }, 1000);
+    }
+  }, [githubtext]);
+
+  useEffect(() => {
+    if (facebooktext === "copyed") {
+      setTimeout(() => {
+        settextfacebook("copy");
+      }, 1000);
+    }
+  }, [facebooktext]);
+
   return (
     <div
       ref={sectionref}
       id="contactsection"
       className="opacity-0 w-screen py-10"
     >
-      <h1 className="text-center text-3xl">
+      <h1 className="text-center text-3xl dark:text-primarydark text-primary">
         {`<`} Contact {`/>`}
       </h1>
       {/* Social Links */}
       <div className="w-2/4 mx-auto mt-10">
         <div className="text-center text-lg mb-3">
           FeelFree To Contact Me At{" "}
-          <a href="#" className="text-blue-600">
+          <a
+            href="mailto:salemmazen27@gmail.com"
+            className="text-primary dark:text-primarydark"
+          >
             salemmazen27@gmail.com
           </a>
         </div>
+
         <div className="flex justify-around pb-28">
-          <div className="group relative cursor-pointer w-14 flex justify-center items-center h-14 bg-blue-600 rounded-full">
-            <span>G</span>
-            <div className="bg-black mt-1 text-white opacity-0 group-hover:opacity-100 transition duration-700 absolute text-lg cursor-default top-full left-2/4 transform -translate-x-2/4 rounded-md">
-              <div className="text-base text-center border-b-2 border-white">
-                salemmazen27
-                <br />
-                @gmail.com
+          <div className="group relative cursor-pointer w-14 flex justify-center items-center h-14 bg-primary dark:bg-primarydark rounded-full">
+            <span>E</span>
+            <div className="dark:bg-white bg-black text-white mt-1 dark:text-black opacity-0 group-hover:opacity-100 transition duration-700 absolute text-lg cursor-default top-full left-2/4 transform -translate-x-2/4 rounded-md">
+              <div className="text-base text-center border-b-2 border-white dark:border-black">
+                salemmazen27@gmail.com
               </div>
-              <div className="w-full cursor-pointer text-center border-b-2 border-white">
-                copy
+              <div
+                onClick={() => {
+                  navigator.clipboard.writeText("salemmazen27@gmail.com");
+                  settextemail("copyed");
+                }}
+                className="w-full cursor-pointer text-center border-b-2 border-white dark:border-black"
+              >
+                {emailtext}
               </div>
-              <div className="w-full cursor-pointer text-center">go</div>
+              <a
+                href="mailto:salemmazen27@gmail.com"
+                className="block w-full cursor-pointer text-center"
+              >
+                send
+              </a>
             </div>
           </div>
-          <div className="group relative cursor-pointer w-14 flex justify-center items-center h-14 bg-blue-600 rounded-full">
-            <span>G</span>
-            <div className="bg-black mt-1 text-white opacity-0 group-hover:opacity-100 transition duration-700 absolute text-lg cursor-default top-full left-2/4 transform -translate-x-2/4 rounded-md">
-              <div className="text-base text-center border-b-2 border-white">
-                salemmazen27
-                <br />
-                @gmail.com
+
+          <div className="group relative cursor-pointer w-14 flex justify-center items-center h-14 bg-primary dark:bg-primarydark rounded-full">
+            <span>P</span>
+            <div className="dark:bg-white bg-black text-white mt-1 dark:text-black opacity-0 group-hover:opacity-100 transition duration-700 absolute text-lg cursor-default top-full left-2/4 transform -translate-x-2/4 rounded-md">
+              <div className="text-base text-center border-b-2 border-white dark:border-black">
+                ‎+201285301916
               </div>
-              <div className="w-full cursor-pointer text-center border-b-2 border-white">
-                copy
+              <div
+                onClick={() => {
+                  navigator.clipboard.writeText("‎+201285301916");
+                  settextphone("copyed");
+                }}
+                className="w-full cursor-pointer text-center border-b-2 border-white dark:border-black"
+              >
+                {phonetext}
               </div>
-              <div className="w-full cursor-pointer text-center">go</div>
+              <a
+                href="tel:+201285301916"
+                className="block w-full cursor-pointer text-center"
+              >
+                phone
+              </a>
             </div>
           </div>
-          <div className="group relative cursor-pointer w-14 flex justify-center items-center h-14 bg-blue-600 rounded-full">
+
+          <div className="group relative cursor-pointer w-14 flex justify-center items-center h-14 bg-primary dark:bg-primarydark rounded-full">
             <span>G</span>
-            <div className="bg-black mt-1 text-white opacity-0 group-hover:opacity-100 transition duration-700 absolute text-lg cursor-default top-full left-2/4 transform -translate-x-2/4 rounded-md">
-              <div className="text-base text-center border-b-2 border-white">
-                salemmazen27
-                <br />
-                @gmail.com
+            <div className="dark:bg-white bg-black text-white mt-1 dark:text-black opacity-0 group-hover:opacity-100 transition duration-700 absolute text-lg cursor-default top-full left-2/4 transform -translate-x-2/4 rounded-md">
+              <div className="text-base text-center border-b-2 border-white dark:border-black">
+                ‎Github.com
               </div>
-              <div className="w-full cursor-pointer text-center border-b-2 border-white">
-                copy
+              <div
+                onClick={() => {
+                  navigator.clipboard.writeText(
+                    "‎https://github.com/mazensalem"
+                  );
+                  settextgithub("copyedborder-white dark:");
+                }}
+                className="w-full cursor-pointer text-center border-b-2 border-white dark:border-black"
+              >
+                {githubtext}
               </div>
-              <div className="w-full cursor-pointer text-center">go</div>
+              <a
+                href="https://github.com/mazensalem"
+                target="_blank"
+                className="block w-full cursor-pointer text-center"
+              >
+                go
+              </a>
             </div>
           </div>
-          <div className="group relative cursor-pointer w-14 flex justify-center items-center h-14 bg-blue-600 rounded-full">
-            <span>G</span>
-            <div className="bg-black mt-1 text-white opacity-0 group-hover:opacity-100 transition duration-700 absolute text-lg cursor-default top-full left-2/4 transform -translate-x-2/4 rounded-md">
-              <div className="text-base text-center border-b-2 border-white">
-                salemmazen27
-                <br />
-                @gmail.com
+
+          <div className="group relative cursor-pointer w-14 flex justify-center items-center h-14 bg-primary dark:bg-primarydark rounded-full">
+            <span>F</span>
+            <div className="dark:bg-white bg-black text-white mt-1 dark:text-black opacity-0 group-hover:opacity-100 transition duration-700 absolute text-lg cursor-default top-full left-2/4 transform -translate-x-2/4 rounded-md">
+              <div className="text-base text-center border-b-2 border-white dark:border-black">
+                Facebook.com
               </div>
-              <div className="w-full cursor-pointer text-center border-b-2 border-white">
-                copy
+              <div
+                onClick={() => {
+                  navigator.clipboard.writeText(
+                    "https://www.facebook.com/mazen.salem.796569"
+                  );
+                  settextfacebook("copyedborder-white dark:");
+                }}
+                className="w-full cursor-pointer text-center border-b-2 border-white dark:border-black"
+              >
+                {facebooktext}
               </div>
-              <div className="w-full cursor-pointer text-center">go</div>
-            </div>
-          </div>
-          <div className="group relative cursor-pointer w-14 flex justify-center items-center h-14 bg-blue-600 rounded-full">
-            <span>G</span>
-            <div className="bg-black mt-1 text-white opacity-0 group-hover:opacity-100 transition duration-700 absolute text-lg cursor-default top-full left-2/4 transform -translate-x-2/4 rounded-md">
-              <div className="text-base text-center border-b-2 border-white">
-                salemmazen27
-                <br />
-                @gmail.com
-              </div>
-              <div className="w-full cursor-pointer text-center border-b-2 border-white">
-                copy
-              </div>
-              <div className="w-full cursor-pointer text-center">go</div>
-            </div>
-          </div>
-          <div className="group relative cursor-pointer w-14 flex justify-center items-center h-14 bg-blue-600 rounded-full">
-            <span>G</span>
-            <div className="bg-black mt-1 text-white opacity-0 group-hover:opacity-100 transition duration-700 absolute text-lg cursor-default top-full left-2/4 transform -translate-x-2/4 rounded-md">
-              <div className="text-base text-center border-b-2 border-white">
-                salemmazen27
-                <br />
-                @gmail.com
-              </div>
-              <div className="w-full cursor-pointer text-center border-b-2 border-white">
-                copy
-              </div>
-              <div className="w-full cursor-pointer text-center">go</div>
+              <a
+                href="https://www.facebook.com/mazen.salem.796569"
+                target="_blank"
+                className="block w-full cursor-pointer text-center"
+              >
+                go
+              </a>
             </div>
           </div>
         </div>

@@ -24,7 +24,7 @@ export default function About() {
       id="aboutsection"
       className="py-10 w-screen opacity-0"
     >
-      <h1 className="text-center text-3xl">
+      <h1 className="text-center text-3xl text-primary dark:text-primarydark">
         {`<`}ABOUT ME {`/>`}
       </h1>
       <p className="text-lg w-2/4 mx-auto mt-10">
@@ -39,7 +39,7 @@ export default function About() {
         updated, I read books and attend conferences {`&`} meetups.
         <br />
         <a
-          className="mt-3 inline-block bg-black text-white hover:text-blue-500 px-2 rounded-md text-xl"
+          className="mt-3 inline-block bg-black text-white dark:bg-white dark:text-black hover:bg-primary dark:hover:bg-primarydark transition duration-700 px-2 rounded-md text-xl"
           href="#contactsection"
         >
           Let's Talk

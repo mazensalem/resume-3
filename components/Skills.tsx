@@ -29,14 +29,16 @@ export default function Portfolio() {
       id="skillsection"
       className="opacity-0 py-10 w-screen"
     >
-      <h3 className="text-center text-3xl">
+      <h3 className="text-center text-3xl text-primary dark:text-primarydark">
         {`<`} Skills {`/>`}
       </h3>
       <div className="text-lg w-2/4 mx-auto mt-5 flex justify-around space-y-1 items-center flex-wrap">
         {skills.map((skill) => (
-          <div className="bg-black text-white p-3 rounded-md w-full">
+          <div className="bg-black text-white dark:bg-white dark:text-black p-3 rounded-md w-full">
             <div className="inline-block">{skill.skill}</div>
-            <div className="float-right w-max">{skill.year} years</div>
+            <div className="float-right w-max text-white dark:text-tertiary">
+              {skill.year} years
+            </div>
           </div>
         ))}
       </div>
